@@ -8,46 +8,43 @@ dwm - dynamic window manager
 dwm is an extremely fast, small, and dynamic window manager for X.
 
 
-Requirements
-------------
-In order to build dwm you need the Xlib header files.
+How to install DWM on Ubuntu Server?
+------------------------------------
 
+1. Download DWM files
+    wget https://dl.suckless.org/dwm/dwm-6.2.tar.gz    
 
-Installation
-------------
-Edit config.mk to match your local setup (dwm is installed into
-the /usr/local namespace by default).
+2. Install dependencies:
+    sudo apt install libx11-dev libxft-dev libxinerama-dev xorg
 
-Afterwards enter the following command to build and install dwm (if
-necessary as root):
+3. Make and install from code
+    tar -xvf dwm-6.2.tar.gz
+    cd dwm-6.2
+    sudo make clean install
 
-    make clean install
+4. Download dmenu
+    wget https://dl.suckless.org/tools/dmenu-5.0.tar.gz
 
+5. Install dmenu
+    tar -xvf dmenu-5.0
+    cd dmenu-5.0
+    sudo make clean install
 
-Running dwm
------------
-Add the following line to your .xinitrc to start dwm using startx:
+6. Download simple terminal st
+    https://dl.suckless.org/st/st-0.8.4.tar.gz
 
-    exec dwm
+7. Install simple terminal
+    tar -xvf st-0.8.4.tar.gz
+    cd st-0.8.4
+    sudo make clean install
 
-In order to connect dwm to a specific display, make sure that
-the DISPLAY environment variable is set correctly, e.g.:
+8. Remove GDM3, as the only desktop environment we need is DWM
+    sudo apt remove gdm3
 
-    DISPLAY=foo.bar:1 exec dwm
+10. Create .xinitrc file, to start DWM
+    cd ~
+    echo dwm > .xinitrc
 
-(This will start dwm on display :1 of the host foo.bar.)
-
-In order to display status info in the bar, you can do something
-like this in your .xinitrc:
-
-    while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
-    do
-    	sleep 1
-    done &
-    exec dwm
-
-
-Configuration
--------------
-The configuration of dwm is done by creating a custom config.h
-and (re)compiling the source code.
+11. Start the graphical interface:
+    cd ~
+    echo startx >> .bash_profile
