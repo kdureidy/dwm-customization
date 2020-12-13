@@ -48,3 +48,7 @@ How to install DWM on Ubuntu Server?
 11. Start the graphical interface:
     `cd ~`
     `echo startx >> .bash_profile`
+
+12. For `Transparency`, you must install `picom`
+    Follow steps on this repository: https://github.com/yshui/picom.git
+    If you like to have `Blur` effects, install this `picom` instead: https://github.com/jonaburg/picom
