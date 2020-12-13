@@ -6,4 +6,5 @@ config.h
 drw.o
 *.orig
 *.rej
+*.swp
 
