@@ -1,7 +1,7 @@
 Screenshot
 ==========
 
-![](https://i.imgur.com/1BqwF9Q.png)
+![screenshot](https://i.imgur.com/1BqwF9Q.png)
 
 dwm - dynamic window manager
 ============================
