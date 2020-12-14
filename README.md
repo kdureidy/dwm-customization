@@ -52,3 +52,19 @@ How to install DWM on Ubuntu Server?
 12. For `Transparency`, you must install `picom`
     Follow steps on this repository: https://github.com/yshui/picom.git
     If you like to have `Blur` effects, install this `picom` instead: https://github.com/jonaburg/picom
+
+13. To control brightness, install `xbacklight`
+    `sudo apt install xbacklight`
+    
+    Configure Brightness:
+    `vim /etc/X11/xorg.conf`
+    
+    Paste this in case your have Intel Graphics Card:
+    
+    ~~~
+    Section "Device"
+        Identifier  "Intel Graphics"
+        Driver      "intel"
+        Option      "Backlight"  "intel_backlight"
+    EndSection
+    ~~~
